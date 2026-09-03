@@ -1,0 +1,19 @@
+<mat-sidenav-container class="shell" autosize>
+  <mat-sidenav #sidenav mode="side" opened class="side-nav">
+    <div class="logo"><span class="material-icons">church</span><strong>Comunidade</strong></div>
+    <p class="menu-label">Menu principal</p>
+    <nav aria-label="Menu principal">
+      <a mat-button routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><mat-icon>home</mat-icon><span>Home</span></a>
+      <a mat-button routerLink="/dashboard/members" routerLinkActive="active"><mat-icon>groups</mat-icon><span>Membros</span></a>
+    </nav>
+    <div class="side-footer"><span class="material-icons">shield</span><span>Ambiente seguro</span></div>
+  </mat-sidenav>
+  <mat-sidenav-content class="main-content">
+    <header class="topbar">
+      <button mat-icon-button class="mobile-menu" (click)="sidenav.toggle()" aria-label="Abrir menu"><mat-icon>menu</mat-icon></button>
+      <div class="search-box"><mat-icon>search</mat-icon><input type="search" placeholder="Buscar na plataforma" aria-label="Buscar na plataforma" /></div>
+      <div class="header-actions"><button mat-icon-button aria-label="Notificacoes"><mat-icon [matBadge]="3" matBadgeColor="warn" matBadgeSize="small">notifications_none</mat-icon></button><div class="user-profile"><span class="avatar">{{ userName.charAt(0) }}</span><span>{{ userName }}</span><mat-icon>expand_more</mat-icon></div></div>
+    </header>
+    <main class="page-content"><router-outlet /></main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

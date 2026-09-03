@@ -26,7 +26,7 @@
 ## Layout
 
 - usar os padrões de lint, prettier ou eslint em todas as classes, funções.
-- a tela de login deverá ter a opção de esqueci a senha, usando formulários reativos com mensagens de erros.
+- a tela de login deverá ter a opção de esqueci a senha, usando formulários reativos com mensagens de erros. Também deverá ter um botão para solicitar acesso caso a pessoa não seja ADMIN.
 - o componente de login deverá estar no centro.
 - o dashboard terá um menu lateral com os menus de acesso para todos os items e subitens de acordo com o perfil do usuário e acesso.
 - o header terá o nome usuário que está logado
