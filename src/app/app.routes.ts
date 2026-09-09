@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
 	{ path: '', pathMatch: 'full', redirectTo: 'login' },
 	{ path: 'login', loadComponent: () => import('./login/login').then((component) => component.Login) },
+	{ path: 'forgot-password', loadComponent: () => import('./forgot-password/forgot-password').then((component) => component.ForgotPassword) },
 	{
 		path: 'dashboard',
 		loadComponent: () => import('./dashboard/dashboard').then((component) => component.Dashboard),

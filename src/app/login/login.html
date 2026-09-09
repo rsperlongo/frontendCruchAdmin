@@ -15,7 +15,7 @@
         <input matInput type="password" formControlName="password" autocomplete="current-password" />
         @if (loginForm.controls.password.hasError('required')) { <mat-error>Informe sua senha.</mat-error> } @else if (loginForm.controls.password.hasError('minlength')) { <mat-error>A senha deve ter pelo menos 6 caracteres.</mat-error> }
       </mat-form-field>
-      <div class="form-actions"><a href="#" (click)="$event.preventDefault()">Esqueci minha senha</a><button mat-flat-button type="submit">Entrar</button></div>
+      <div class="form-actions"><a routerLink="/forgot-password">Esqueci minha senha</a><button mat-flat-button type="submit">Entrar</button></div>
     </form>
     <div class="access-request"><span>Ainda nao possui acesso?</span><button mat-button type="button">Solicitar acesso</button></div>
   </section>
