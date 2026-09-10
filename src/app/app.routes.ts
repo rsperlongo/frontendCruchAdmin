@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './core/auth/auth.guard';
 
 export const routes: Routes = [
 	{ path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -6,6 +7,7 @@ export const routes: Routes = [
 	{ path: 'forgot-password', loadComponent: () => import('./forgot-password/forgot-password').then((component) => component.ForgotPassword) },
 	{
 		path: 'dashboard',
+		canActivate: [authGuard],
 		loadComponent: () => import('./dashboard/dashboard').then((component) => component.Dashboard),
 		children: [
 			{ path: '', loadComponent: () => import('./dashboard/home').then((component) => component.Home) },

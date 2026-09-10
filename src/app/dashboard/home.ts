@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { AuthService } from '../core/auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,8 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './home.scss',
 })
 export class Home {
-  protected readonly userName = sessionStorage.getItem('church-admin-user') || 'Administrador';
+  private readonly authService = inject(AuthService);
+  protected readonly userName = this.authService.getUser()?.email || 'Administrador';
   protected readonly metrics = [
     { label: 'Membros ativos', value: '248', trend: '+12% este mes', icon: 'groups' },
     { label: 'Eventos este mes', value: '08', trend: '2 nesta semana', icon: 'event' },
