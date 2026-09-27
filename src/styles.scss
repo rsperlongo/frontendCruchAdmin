@@ -4,3 +4,8 @@
 html, body { height: 100%; margin: 0; }
 body { background: #f4f7fb; color: #172b4d; font-family: 'Roboto', sans-serif; font-size: 12px; }
 * { box-sizing: border-box; }
+button.mat-mdc-unelevated-button, button.mat-mdc-raised-button { color: #fff !important; }
+button.mat-mdc-button { background-color: #0c5dcc; color: #fff !important; }
+.member-toast-success .mdc-snackbar__surface { background-color: #18794e !important; color: #fff !important; }
+.member-toast-error .mdc-snackbar__surface { background-color: #b42318 !important; color: #fff !important; }
+.member-toast-success .mat-mdc-snack-bar-action, .member-toast-error .mat-mdc-snack-bar-action { color: #fff !important; }

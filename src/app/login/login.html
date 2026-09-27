@@ -13,12 +13,15 @@
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Senha</mat-label>
-        <input matInput type="password" formControlName="password" autocomplete="current-password" />
+        <input matInput [type]="showPassword() ? 'text' : 'password'" formControlName="password" autocomplete="current-password" />
+        <button mat-icon-button matSuffix type="button" (click)="showPassword.update((visible) => !visible)" [attr.aria-label]="showPassword() ? 'Ocultar senha' : 'Mostrar senha'" [attr.aria-pressed]="showPassword()">
+          <mat-icon>{{ showPassword() ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
         @if (loginForm.controls.password.hasError('required')) { <mat-error>Informe sua senha.</mat-error> } @else if (loginForm.controls.password.hasError('minlength')) { <mat-error>A senha deve ter pelo menos 6 caracteres.</mat-error> }
       </mat-form-field>
       <div class="form-actions"><a routerLink="/forgot-password">Esqueci minha senha</a><button mat-flat-button type="submit" [disabled]="isSubmitting">{{ isSubmitting ? 'Entrando...' : 'Entrar' }}</button></div>
     </form>
-    <div class="access-request"><span>Ainda nao possui acesso?</span><button mat-button type="button">Solicitar acesso</button></div>
+    <div class="access-request"><span>Ainda nao possui acesso?</span><button mat-flat-button class="access-request-button" type="button">Solicitar acesso</button></div>
   </section>
   <aside class="login-aside" aria-label="Mensagem institucional"><span class="aside-tag">Comunidade em movimento</span><h2>Mais tempo para cuidar de pessoas.</h2><p>Organize membros, eventos e a rotina da sua igreja com clareza.</p><div class="aside-line"></div></aside>
 </main>
