@@ -42,7 +42,11 @@ export class Login {
       },
       error: (error: HttpErrorResponse) => {
         this.isSubmitting = false;
-        this.errorMessage = error.status === 401 ? 'E-mail ou senha inválidos.' : 'Não foi possível conectar ao servidor. Tente novamente.';
+        this.errorMessage = error.status === 401
+          ? 'E-mail ou senha inválidos.'
+          : error.status === 0
+            ? 'Servidor indisponível. Inicie o backend e tente novamente.'
+            : 'Não foi possível concluir o login. Tente novamente.';
       },
     });
   }
